@@ -1,40 +1,42 @@
+"use client";
+
 import React from 'react';
 import Head from 'next/head';
-import './sign.css';
+import './signin.css';
+import { IoMailOutline, IoLockClosedOutline } from 'react-icons/io5';
 
-const SignIn = () => {
+const LoginForm = () => {
   return (
-    <>
+    <div className="login-container">
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-          rel="stylesheet"
-        />
+        <title>Login | LuxNova</title>
       </Head>
-      <div className="container">
-        <div className="formContainer">
-          <h1 className="title">Sign In</h1>
-          <form>
-            <input
-              type="email"
-              placeholder="Email"
-              required
-              className="input"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              required
-              className="input"
-            />
-            <button type="submit" className="button">
-              Log In
-            </button>
-          </form>
+      <form className="login-form">
+        <h1 className="login-title">Log In</h1>
+
+        <div className="input-box">
+          <IoMailOutline className="icon" />
+          <input type="email" required placeholder="Email" />
         </div>
-      </div>
-    </>
+
+        <div className="input-box">
+          <IoLockClosedOutline className="icon" />
+          <input type="password" required placeholder="Password" />
+        </div>
+
+        <div className="login-options">
+          <label><input type="checkbox" /> Remember me</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <button className="login-button">Log In</button>
+
+        <div className="register-link">
+          <p>Don't have an account? <a href="/signup">Register</a></p>
+        </div>
+      </form>
+    </div>
   );
 };
 
-export default SignIn;
+export default LoginForm;

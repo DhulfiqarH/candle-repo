@@ -1,29 +1,34 @@
+"use client";
+
 import React from 'react';
 import Head from 'next/head';
-import './signup.css'; // Ensure this file is correctly named and exists
+import './signup.css';
 
 const SignUp = () => {
   return (
     <div className="signup-container">
       <Head>
-        <title>Sign Up</title>
+        <title>Sign Up | LuxNova</title>
       </Head>
-      <h1>Create Your Account</h1>
-      <form className="signup-form">
+      <div className="signup-form">
+        <h1 className="signup-title">Create an Account</h1>
         <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" placeholder="Enter your username" required />
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" placeholder="Enter your name" />
         </div>
         <div className="form-group">
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required />
+          <input type="email" id="email" placeholder="Enter your email" />
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" required />
+          <input type="password" id="password" placeholder="Create a password" />
         </div>
-        <button type="submit" className="signup-button">Sign Up</button>
-      </form>
+        <button className="signup-button">Sign Up</button>
+        <div className="login-link">
+          <p>Already have an account? <a href="/signin">Log In</a></p>
+        </div>
+      </div>
     </div>
   );
 };

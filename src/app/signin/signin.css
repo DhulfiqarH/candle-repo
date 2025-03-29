@@ -1,16 +1,15 @@
-/* signup.css */
+/* login.css */
 
-.signup-container {
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(to right, #2c2c54, #4b2c5e);
   padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.signup-form {
+.login-form {
   background-color: #1e1e2f;
   padding: 40px;
   border-radius: 15px;
@@ -21,41 +20,53 @@
   animation: slideInUp 1s ease;
 }
 
-.signup-title {
+.login-title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 30px;
   color: #e0b3ff;
 }
 
-.form-group {
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #2f2f45;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+.input-box input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  padding-left: 10px;
+}
+
+.input-box .icon {
+  color: #c084fc;
+  font-size: 1.2rem;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #ccc;
   margin-bottom: 20px;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 6px;
-  color: #ccc;
-  font-weight: 500;
+.login-options a {
+  color: #c084fc;
+  text-decoration: none;
 }
 
-.form-group input {
-  width: 100%;
-  padding: 12px;
-  background-color: #2f2f45;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 1rem;
-  transition: box-shadow 0.3s ease;
-}
-
-.form-group input:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #9333ea;
-}
-
-.signup-button {
+.login-button {
   width: 100%;
   padding: 12px;
   background-color: #9333ea;
@@ -68,17 +79,17 @@
   cursor: pointer;
 }
 
-.signup-button:hover {
+.login-button:hover {
   background-color: #7e22ce;
 }
 
-.login-link {
+.register-link {
   margin-top: 20px;
   text-align: center;
   font-size: 0.9rem;
 }
 
-.login-link a {
+.register-link a {
   color: #c084fc;
   text-decoration: none;
 }
