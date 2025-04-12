@@ -1,8 +1,9 @@
 "use client";
 
 import Link from 'next/link';
-import { useState, useRef, useEffect, MutableRefObject } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './product.css';
+import Image from 'next/image';
 
 const scentMaps = [
   { x: 80, y: 30, label: 'Sweet + Oud' },
@@ -118,7 +119,7 @@ export default function ProductsPage() {
                   if (el) refs.current[index] = el;
                 }}
               >
-                <img src={candle.img} alt={candle.name} className="product-image" />
+                <Image src={candle.img} alt={candle.name} className="product-image" width={500} height={500} />
                 <h2>{candle.name}</h2>
                 <p className="price">{candle.price}</p>
                 <p className="stock">{candle.stock} in stock</p>
