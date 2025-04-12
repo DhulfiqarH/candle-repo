@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, MutableRefObject } from 'react';
 import './product.css';
 
 const scentMaps = [
@@ -13,8 +13,20 @@ const scentMaps = [
 ];
 
 export default function ProductsPage() {
-  const [openIndex, setOpenIndex] = useState(null);
-  const refs = useRef([]);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const refs = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    if (openIndex !== null && refs.current[openIndex]) {
+      requestAnimationFrame(() => {
+        refs.current[openIndex]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+  }, [openIndex]);
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(prev => (prev === index ? null : index));
+  };
 
   return (
     <main className="main-bg">
@@ -101,8 +113,10 @@ export default function ProductsPage() {
               className={`product-card-wrapper ${isOpen ? 'expanded' : ''}`}
             >
               <div
-                className={`product-card ${index % 3 === 0 ? 'tilt-left' : index % 3 === 1 ? 'tilt-right' : 'tilt-center'}`}
-                ref={(el) => (refs.current[index] = el)}
+                className={`product-card ${['tilt-left', 'tilt-right', 'tilt-center'][index % 3]}`}
+                ref={el => {
+                  if (el) refs.current[index] = el;
+                }}
               >
                 <img src={candle.img} alt={candle.name} className="product-image" />
                 <h2>{candle.name}</h2>
@@ -111,7 +125,7 @@ export default function ProductsPage() {
                 <div className="product-details-toggle">
                   <span
                     className="details-button"
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    onClick={() => handleToggle(index)}
                   >
                     {isOpen ? 'Hide Details' : 'Show Details'}
                   </span>
