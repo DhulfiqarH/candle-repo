@@ -26,7 +26,7 @@ const Home = () => {
       <section className="about-section">
         <h2>Our Craft</h2>
         <p>
-          At LuxNova, we craft candles using a clean-burning formula made of premium soy wax and coconut wax. We include two skin-safe preservatives — Voybar and one other for optimal shelf-life.
+          At LuxNova, we craft candles using a clean-burning formula made of premium soy wax and coconut wax. We include two skin-safe preservatives — Voybar and Stearic acid for optimal shelf-life and most importantly scent.
         </p>
         <p>
           Our fragrance oils include notes of pomegranate, vanilla, tonka bean, musk, pipe tobacco, sandalwood, and more. Every candle is hand-poured in small batches for quality and consistency.

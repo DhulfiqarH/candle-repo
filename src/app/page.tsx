@@ -9,7 +9,7 @@ export default function Home() {
       <nav className="nav-bar">
         <div className="brand">LuxNova</div>
         <div className="nav-links">
-          <Link href="/" className="nav-link">Home</Link>
+          <Link href="/home" className="nav-link">Home</Link>
           <Link href="/products" className="nav-link">Products</Link>
           <Link href="/about" className="nav-link">About</Link>
           <Link href="/contact" className="nav-link">Contact</Link>
