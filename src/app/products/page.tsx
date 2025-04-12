@@ -16,12 +16,6 @@ export default function ProductsPage() {
   const [openIndex, setOpenIndex] = useState(null);
   const refs = useRef([]);
 
-  useEffect(() => {
-    if (openIndex !== null && refs.current[openIndex]) {
-      refs.current[openIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  }, [openIndex]);
-
   return (
     <main className="main-bg">
       <nav className="nav-bar">
