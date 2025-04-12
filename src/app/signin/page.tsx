@@ -32,7 +32,7 @@ const LoginForm = () => {
         <button className="login-button">Log In</button>
 
         <div className="register-link">
-          <p>Don't have an account? <a href="/signup">Register</a></p>
+        <p>{"Don't have an account? "}<a href="/signup">Register</a></p>
         </div>
       </form>
     </div>
